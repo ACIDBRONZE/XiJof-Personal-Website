@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XiJof Videos</title>
+    <link rel="icon" href="src/img/favicon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/background.css">
+    <link rel="stylesheet" href="../src/scrollbar.css">
+    <script src="..\src\js\nav.js"></script>
+</head>
+
+<body class="h-full m-0 p-0 bg-[#252525] bg-cover bg-fixed h-screen flex flex-col overflow-x-hidden">
+  <!--page transition -->
+  <div id="transition-overlay" class="fixed inset-0 bg-[#1C1C1C] z-50 opacity-0 pointer-events-none transition-opacity duration-500 flex justify-center items-center">
+        <img src="src/img/favicon.png" class="w-auto h-auto max-w-[150px]">
+  </div>
+  
+    <!--Nav Bar-->
+  <header>
+    <!--Desktop Nav-->
+    <nav class="bg-[#1C1C1C] w-full z-10 top-0 left-0 fixed backdrop-blur bg-opacity-5 border-b border-gray-600 p-4">
+     <div class="flex justify-between items-center">
+       <a href="index.html"> <img class="h-8" alt="XiJof Logo" src="src/img/headerlogo.png"> </a> 
+  
+       <!--links-->
+         <div class="hidden lg:flex space-x-12">
+             <a href="index.html" class="text-white font-semibold hover:text-orange-500">HOME</a>
+             <a href="projects.html" class="text-white font-semibold hover:text-orange-500">PROJECTS</a>
+  
+             <!--hobbies-->
+             <div class="relative">
+                 <button class="text-white font-semibold hover:text-orange-500" onclick="deskdropdown()">HOBBIES</button>
+                 <ul id="desktopdrop" class="absolute bg-gray-700 rounded-md z-50 text-white space-y-w p-2 w-32 hidden">
+                     <li><a href="video.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">VIDEO</a></li>
+                     <li><a href="photography.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">PHOTO</a></li>
+                     <li><a href="gaming.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">GAMING</a></li>
+                     <li><a href="music.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">MUSIC</a></li>
+                 </ul>
+             </div>
+  
+             <a href="about.html" class="text-white font-semibold hover:text-orange-500">ABOUT</a>
+             <a href="contactform.html" class="text-white font-semibold hover:text-orange-500">CONTACT</a>
+             <div></div>
+         </div>
+  
+             <!--burger-->
+             <button id="burger" class="lg:hidden flex items-center text-white" onclick="openMenu()">
+                 <img alt="burger" src="src/img/hamburger.jpg" class="h-auto w-8">
+             </button>
+  
+                 <!-- Close Hamburger Button -->
+             <button id="closeburger" class="lg:hidden hidden flex items-center text-white" onclick="openMenu()">
+                  <img alt="close button" src="src/img/hamburgerexit.png" class="h-auto w-8">
+             </button>
+     </div>
+    </nav>
+  
+  <!--mobile menu-->
+    <div id="menu" class="lg:hidden hidden fixed inset-x-0 top-16 bottom-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center py-10 transition-all duration-500 ease-in-out opacity-100 h-screen overflow-hidden">
+  
+     <!-- Links -->
+     <a href="index.html" class="text-white font-semibold py-2 text-xl">HOME</a>
+     <a href="projects.html" class="text-white font-semibold py-2 text-xl">PROJECTS</a>
+  
+     <!-- Hobbies Dropdown -->
+     <div class="flex items-center justify-center relative"> 
+         <button type="button" id="mobilehobbies" class="text-white text-xl font-semibold py-2" onclick="dropdown()">HOBBIES</button>
+         
+         <ul id="dropdown" class="hidden z-50 absolute rounded-md bg-gray-700 text-white text-center space-y-2 p-2 w-48 mt-64 transition-all duration-300 ease-in-out"> 
+             <li><a href="video.html" class="block px-4 py-2">VIDEO</a><hr></li>
+             <li><a href="photography.html" class="block px-4 py-2">PHOTO</a><hr></li>
+             <li><a href="gaming.html" class="block px-4 py-2">GAMING</a><hr></li>
+             <li><a href="music.html" class="block px-4 py-2">MUSIC</a></li>
+         </ul>
+     </div>
+  
+     <a href="about.html" class="text-white font-semibold py-2 text-xl">ABOUT</a>
+     <a href="contactform.html" class="text-white font-semibold py-2 text-xl">CONTACT</a>
+  
+  </header>
+  <!--scroll progress-->
+  <div class="fixed invisible top-0 left-0 w-full h-4 bg-gray-200 lg:h-64 lg:w-4 lg:top-24 lg:left-4 lg:visible">
+     <div id="scroll-progress" class="w-full h-full bg-red-500 lg:w-4 lg:h-4"></div>
+  </div>
+
+<main>
+    <!--video showcase-->
+    <div class="mt-24"></div>
+    <h1 class="font-semibold text-3xl lg:text-5xl text-[#E0E0E0] text-center mb-8">VIDEO SHOWCASE</h1>
+
+
+    <div class="container mx-auto mt-8">
+      <div class="text-center ml-4 mr-4 grid grid-cols-1 md:grid-cols-2 gap-y-6">
+    
+        <!-- Card 1 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] mx-auto">
+          <img src="src/img/poster1.png" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[200px]" data-video="src/media/video1.mp4">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Beauty of Caunayan Falls</h3>
+          </div>
+        </div>
+    
+        <!-- Card 2 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] mx-auto">
+          <img src="src/img/poster2.png" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[200px]" data-video="src/media/video2.mp4">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Demonstration of Separating Mixtures</h3>
+          </div>
+        </div>
+    
+        <!-- Card 3 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] mx-auto">
+          <img src="src/img/poster3.png" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[200px]" data-video="src/media/video3.mp4">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Kick the Ball</h3>
+          </div>
+        </div>
+    
+        <!-- Card 4 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden w-[300px] mx-auto">
+          <img src="src/img/poster4.png" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[200px]" data-video="src/media/video4.mp4">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Blender Grass Animation Test</h3>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
+
+  <!--google drive aah modal preview-->
+  <div id="mediaModal" class="fixed inset-0 bg-black visible transition-opacity opacity-1 duration-300 ease-in-out bg-opacity-75 hidden items-center justify-center z-50">
+    <div class="relative w-full h-full flex items-center justify-center">
+
+      <div id="modalContent" class="flex justify-center items-center relative invisible max-w-[90%] max-h-[80vh] bg-white w-full max-w-4xl mx-auto pointer-events-none">
+
+        <img id="modalImage" class="visible max-w-[60%] max-h-[50%] object-contain hidden pointer-events-auto" />
+
+        <video id="modalVideo" class="visible max-w-[60%] max-h-[50%] w-full h-auto object-contain hidden pointer-events-auto" controls>
+          <source id="modalVideoSource" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>   
+
+  <div class="mt-12"></div>
+  <br>
+  <div class="container mx-auto p-4">
+
+    <div class="flex flex-col lg:items-center justify-center space-y-4 lg:space-y-24 lg:space-x-4 p-4">
+      
+
+      <div class="flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
+        <img src="src/img/video.png" alt="Xian's Photo" class="lg:ml-8 w-full lg:w-1/2 rounded-lg border-4 border-white">
+        <div class="space-y-2 lg:space-x-4 lg:text-left p-4">
+          <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">XIAN DIVINAGRACIA</h6>
+          <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">Depending on the deadline or my mood, I use CapCut because it is fast and easy to use, plus it has many tutorials available online, making it easy to achieve results comparable to average editors. However, when I want to be serious about editing, I use a combination of Adobe Premiere Pro and DaVinci Resolve for big or lengthy projects.</p>
+          <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">For animation, aside from PowerPoint, I use After Effects for motion graphics and Blender for low-poly 3D animation. My goal is to create a simple animated short and a music visualizer, similar to those seen in video games and music festivals.</p>
+        </div>
+      </div>
+      
+
+    <div class="flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
+      <img src="src/img/photographyjoffer.jpeg" alt="Joffer's Photo" class="flex lg:hidden w-[80%] h-1/4 rounded-lg border-4 border-white">
+      <div class="space-y-2 lg:space-x-4 lg:text-left p-4">
+        <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">JOFFER ESCOTO</h6>
+        <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">I do all my editing straight from my Realme 8 5G phone, using the CapCut app. It’s not the usual computer-based editing workflow, but it works perfectly for me. CapCut is easy to use, and the phone’s performance is solid enough to handle most of my editing needs, whether it's cutting videos, adding effects, or tweaking audio. It’s all about making the process simple and efficient, and with my phone, I can edit on the go or from the comfort of wherever I happen to be.</p>
+       </div>
+        <img src="src/img/photographyjoffer.jpeg" alt="Joffer's Photo" class="hidden lg:flex w-1/3 h-1/4 rounded-lg border-4 border-white">
+      </div>
+    </div>
+  </div>
+  
+</main>
+
+<!--bg animation-->
+<div class="area w-full h-screen fixed top-0 left-0 overflow-hidden">
+  <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+</div>
+
+<!--footer-->
+<footer class="bg-[#121212] text-white w-screen lg:w-full mt-auto py-3 px-0">
+  <div class="container mx-auto flex flex-col items-center justify-center text-center space-y-8">
+      <div class="flex flex-col items-center">
+          <h6 class="text-3xl font-bold mb-2">CONNECT WITH US</h6>
+          <hr class="w-full my-2">
+
+          <ul class="flex space-x-4 justify-center mt-2">
+              <li><a href="https://www.facebook.com"><img src="src/img/facebook.png" alt="Facebook" class="w-8 h-8"></a></li>
+              <li><a href="https://www.instagram.com"><img src="src/img/instagram.png" alt="Instagram" class="w-8 h-8"></a></li>
+              <li><a href="https://www.youtube.com"><img src="src/img/youtube.png" alt="Youtube" class="w-8 h-8"></a></li>
+              <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
+          </ul>
+      </div>
+      
+      <div class="flex flex-row gap-4">
+          <img alt="email" src="src/img/gmail.png" class="size-8">
+          <h5>xijofofficial@gmail.com</h5>
+      </div>
+
+      <div class="flex flex-row gap-4">
+          <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
+          <p>0923-456-1678</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
+          <div>
+              <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
+              <p>divinagraciaxian@gmail.com</p>
+              <p>0947-887-1111</p>
+          </div>
+          <div>
+              <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
+              <p>joffere7@gmail.com</p>
+              <p>0951-519-9488</p>
+          </div>
+      </div>
+
+      <div class="text-center mt-8">
+          <p class="text-sm font-bold">
+              &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
+          </p>
+      </div>
+  </div>
+</footer>
+ 
+</body>
+<script src="..\src\js\gaming.js"></script>  
+
+</html>

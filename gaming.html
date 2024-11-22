@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>XiJof Gaming</title>
+    <link rel="icon" href="src/img/favicon.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/background.css">
+    <link rel="stylesheet" href="../src/scrollbar.css">
+    <script src="..\src\js\nav.js"></script>
+    <style>
+      .clips::-webkit-scrollbar{
+        display: none;
+      }
+    </style>
+</head>
+
+<body class="h-full m-0 p-0 bg-[#252525] bg-cover bg-fixed h-screen flex flex-col overflow-x-hidden">
+  <!--page transition -->
+<div id="transition-overlay" class="fixed inset-0 bg-[#1C1C1C] z-50 opacity-0 pointer-events-none transition-opacity duration-500 flex justify-center items-center">
+      <img src="src/img/favicon.png" class="w-auto h-auto max-w-[150px]">
+</div>
+
+  <!--Nav Bar-->
+<header>
+  <!--Desktop Nav-->
+  <nav class="bg-[#1C1C1C] w-full z-10 top-0 left-0 fixed backdrop-blur bg-opacity-5 border-b border-gray-600 p-4">
+   <div class="flex justify-between items-center">
+     <a href="index.html"> <img class="h-8" alt="XiJof Logo" src="src/img/headerlogo.png"> </a> 
+
+     <!--links-->
+       <div class="hidden lg:flex space-x-12">
+           <a href="index.html" class="text-white font-semibold hover:text-orange-500">HOME</a>
+           <a href="projects.html" class="text-white font-semibold hover:text-orange-500">PROJECTS</a>
+
+           <!--hobbies-->
+           <div class="relative">
+               <button class="text-white font-semibold hover:text-orange-500" onclick="deskdropdown()">HOBBIES</button>
+               <ul id="desktopdrop" class="absolute bg-gray-700 rounded-md z-50 text-white space-y-w p-2 w-32 hidden">
+                   <li><a href="video.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">VIDEO</a></li>
+                   <li><a href="photography.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">PHOTO</a></li>
+                   <li><a href="gaming.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">GAMING</a></li>
+                   <li><a href="music.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">MUSIC</a></li>
+               </ul>
+           </div>
+
+           <a href="about.html" class="text-white font-semibold hover:text-orange-500">ABOUT</a>
+           <a href="contactform.html" class="text-white font-semibold hover:text-orange-500">CONTACT</a>
+           <div></div>
+       </div>
+
+           <!--burger-->
+           <button id="burger" class="lg:hidden flex items-center text-white" onclick="openMenu()">
+               <img alt="burger" src="src/img/hamburger.jpg" class="h-auto w-8">
+           </button>
+
+               <!-- Close Hamburger Button -->
+           <button id="closeburger" class="lg:hidden hidden flex items-center text-white" onclick="openMenu()">
+                <img alt="close button" src="src/img/hamburgerexit.png" class="h-auto w-8">
+           </button>
+   </div>
+  </nav>
+
+<!--mobile menu-->
+  <div id="menu" class="lg:hidden hidden fixed inset-x-0 top-16 bottom-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center py-10 transition-all duration-500 ease-in-out opacity-100 h-screen overflow-hidden">
+
+   <!-- Links -->
+   <a href="index.html" class="text-white font-semibold py-2 text-xl">HOME</a>
+   <a href="projects.html" class="text-white font-semibold py-2 text-xl">PROJECTS</a>
+
+   <!-- Hobbies Dropdown -->
+   <div class="flex items-center justify-center relative"> 
+       <button type="button" id="mobilehobbies" class="text-white text-xl font-semibold py-2" onclick="dropdown()">HOBBIES</button>
+       
+       <ul id="dropdown" class="hidden z-50 absolute rounded-md bg-gray-700 text-white text-center space-y-2 p-2 w-48 mt-64 transition-all duration-300 ease-in-out"> 
+           <li><a href="video.html" class="block px-4 py-2">VIDEO</a><hr></li>
+           <li><a href="photography.html" class="block px-4 py-2">PHOTO</a><hr></li>
+           <li><a href="gaming.html" class="block px-4 py-2">GAMING</a><hr></li>
+           <li><a href="music.html" class="block px-4 py-2">MUSIC</a></li>
+       </ul>
+   </div>
+
+   <a href="about.html" class="text-white font-semibold py-2 text-xl">ABOUT</a>
+   <a href="contactform.html" class="text-white font-semibold py-2 text-xl">CONTACT</a>
+
+</header>
+<!--scroll progress-->
+<div class="fixed invisible top-0 left-0 w-full h-4 bg-gray-200 lg:h-64 lg:w-4 lg:top-24 lg:left-4 lg:visible">
+   <div id="scroll-progress" class="w-full h-full bg-red-500 lg:w-4 lg:h-4"></div>
+</div>
+
+<main>
+
+  <div class="container mx-auto mt-32 mb-48">
+  <div class="flex flex-col sm:flex-row justify-center sm:gap-8">
+      
+      <!-- First Card -->
+      <div class="mb-8 sm:mb-0">
+        <a href="gaming.html">
+          <div class="py-8 bg-red-500 rounded-lg shadow-md transition-transform duration-300 ease lg:hover:translate-y-[-30px] md:hover:translate-y-[-30px]">
+            <div class="text-white mb-4 text-center">
+              <h3 class="font-bold text-lg">DeltAcidity (Acidity)</h3>
+              <h4 class="text-lg">Xian Divinagracia</h4>
+            </div>
+            <img alt="photo" src="src/img/xianhome.jpg" class="w-48 h-48 object-cover mx-auto cursor-pointer">
+            <div class="text-white mt-2 text-center flex flex-row gap-4 items-center justify-center">
+              <img alt="game" src="src/img/arcaea.jpg" class="size-8" title="Arcaea">
+              <img alt="game" src="src/img/maimai.png" class="size-8" title="maimai">
+              <img alt="game" src="src/img/starrail.png" class="size-8" title="Honkai: Star Rail">
+              <img alt="game" src="src/img/taiko.png" class="size-8" title="Taiko no Tatsujin: Rhythm Festival">
+            </div>
+          </div>
+        </a>
+      </div>
+  
+      <!-- Second Card -->
+      <div class="mb-8 sm:mb-0">
+        <a href="gaming2.html">
+          <div class="py-8 bg-red-500 rounded-lg shadow-md transition-transform duration-300 ease lg:hover:translate-y-[-30px] md:hover:translate-y-[-30px]">
+            <div class="text-white mb-4 text-center">
+              <h3 class="font-bold text-lg">Fuush13</h3>
+              <h4 class="text-lg">Joffer Escoto</h4>
+            </div>
+            <img alt="photo" src="src/img/joffergaming.jpg" class="w-48 h-48 object-cover mx-auto cursor-pointer">
+            <div class="text-white mt-2 text-center flex flex-row gap-4 items-center justify-center">
+              <img alt="game" src="src/img/dyinglight.png" class="size-8" title="Dying Light (2015)">
+              <img alt="game" src="src/img/arenabreakout.png" class="size-8" title="Arena Breakout">
+              <img alt="game" src="src/img/roblox.png" class="size-8" title="Roblox">
+              <img alt="game" src="src/img/mobilelegends.png" class="size-8" title="Mobile Legends: Bang bang">
+            </div>
+          </div>
+        </a>
+      </div>
+  
+    
+  </div>
+  </div>
+
+  <h1 class="font-semibold text-center text-4xl mt-24 text-[#E0E0E0]">CLIPS AND HIGHLIGHTS</h1>
+    <div class="flex items-center justify-center my-[5%] mx-auto relative">
+        
+      <img src="src/img/prev.png" id="prevbtn" class="hidden lg:flex w-[50px] cursor-pointer hover:brightness-75 absolute left-0 lg:left-28 mx-4">
+      
+    <div class="clips w-full md:w-[900px] flex overflow-x-auto space-x-4 px-4 object-cover">
+          
+      <div class="flex-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2">
+
+        <span>
+          <img src="src/img/gamephoto1.jpg" class="thumbnail transition-transform duration-500 lg:hover:scale-110 w-full h-[154px] object-cover">
+        </span>
+
+        <span>
+          <img src="src/img/gameposter1.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-auto" data-video="src/media/gamevideo.mp4">
+        </span>
+
+        <span>
+          <img src="src/img/gamephoto2.jpg" class="thumbnail transition-transform duration-500 lg:hover:scale-110 w-full h-auto object-cover">
+        </span>
+
+      </div>
+      
+      <div class="flex-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2">
+        <span>
+          <img src="src/img/gameposter2.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[153px]" data-video="src/media/gamevideo2.mp4">
+        </span>
+
+        <span>
+          <img src="src/img/gameposter4.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-auto" data-video="src/media/gamevideo4.mp4">
+        </span>
+
+        <span>
+          <img src="src/img/gameposter3.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[153px]" data-video="src/media/gamevideo3.mp4">
+        </span>
+
+      </div>
+    </div>
+      
+      <img src="src/img/next.png" id="nextbtn" class="hidden lg:flex w-[50px] cursor-pointer hover:brightness-75 absolute right-0 lg:right-28 mx-4">
+    </div>
+      
+      <!--google drive aah modal preview-->
+      <div id="mediaModal" class="fixed inset-0 bg-black visible transition-opacity opacity-1 duration-300 ease-in-out bg-opacity-75 hidden items-center justify-center z-50">
+        <div class="relative w-full h-full flex items-center justify-center">
+
+          <div id="modalContent" class="flex justify-center items-center relative invisible max-w-[90%] max-h-[80vh] bg-white w-full max-w-4xl mx-auto pointer-events-none">
+
+            <img id="modalImage" class="visible max-w-[60%] max-h-[50%] object-contain hidden pointer-events-auto" />
+
+            <video id="modalVideo" class="visible max-w-[60%] max-h-[50%] w-full h-auto object-contain hidden pointer-events-auto" controls>
+              <source id="modalVideoSource" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      
+      <script src="..\src\js\gaming.js"></script>     
+      
+    <!--setup-->
+    <div class="container mx-auto mt-24"> 
+      <div class="flex flex-col items-center justify-center">
+        <div class="w-[95%] lg:w-1/2">
+          <img id="photosetup" alt="Setup" src="src/img/setup.jpg" class="w-full h-auto rounded-sm shadow-md">
+        </div>
+    
+        <div class="container mx-auto">
+          <h1 id="headsetup" class="font-semibold text-center text-2xl lg:text-4xl my-8 text-[#E0E0E0]">Xian's Setup</h1>
+          <p id="parasetup" class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 w-80 lg:w-1/2 mx-auto">
+            My setup consists of an Acer Aspire 5, Royal Kludge 918 keyboard, A4TECH N-400 mouse and a touchscreen monitor named SZHOESD.a that I bought from Lazada. My laptop is primarily used for school and office work with Windows 11 as the OS, a 12GB RAM, 1.4TB of storage,
+            Intel i3 10th Gen, and Integrated GPU, which is considered weak for gaming standards but can handle low graphics and small games.
+          </p>
+        </div>
+      </div>
+    </div>
+      
+      <div class="container mx-auto p-4 mt-16">
+
+      <div class="flex flex-col lg:items-center justify-center space-y-4 lg:space-y-0 p-4">
+ 
+        <div class="flex flex-col lg:flex-row items-center justify-center w-full">
+            <img src="src/img/gamephotobonus1.png" alt="maimai gameplay photo" class="flex lg:hidden w-1/2 rounded-lg border-4 mb-4 border-white">  
+          <div class="space-y-2">          
+            <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-64 lg:mr-12 md:ml-12 md:mr-12 text-center">I've always love playing rhythm games ever since in 2017 where I saw an arcade machine that has the controlsmimicking a dj controller.
+              I thought about that since majority of the people I know are better at playing Shooters, Chess, and MOBA; Rhythm Games are one thing that I am more confident 
+              in my own skills. I recommend these type of games since it trains your rhythm, serve as exercise, and a feeling of satisfaction when you're now beating a hard level of the game. 
+            </p>      
+          </div>
+            <img src="src/img/gamephotobonus1.png" alt="maimai gameplay photo" class="hidden lg:flex w-1/4 rounded-lg border-4 border-white">
+          </div>
+
+        </div>
+
+      </div>
+</main>    
+
+<!--bg animation-->
+<div class="area w-full h-screen fixed top-0 left-0 overflow-hidden">
+  <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+</div>
+
+<!--footer-->
+<footer class="bg-[#121212] text-white w-screen lg:w-full mt-auto py-3 px-0">
+  <div class="container mx-auto flex flex-col items-center justify-center text-center space-y-8">
+      <div class="flex flex-col items-center">
+          <h6 class="text-3xl font-bold mb-2">CONNECT WITH US</h6>
+          <hr class="w-full my-2">
+
+          <ul class="flex space-x-4 justify-center mt-2">
+              <li><a href="https://www.facebook.com"><img src="src/img/facebook.png" alt="Facebook" class="w-8 h-8"></a></li>
+              <li><a href="https://www.instagram.com"><img src="src/img/instagram.png" alt="Instagram" class="w-8 h-8"></a></li>
+              <li><a href="https://www.youtube.com"><img src="src/img/youtube.png" alt="Youtube" class="w-8 h-8"></a></li>
+              <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
+          </ul>
+      </div>
+      
+      <div class="flex flex-row gap-4">
+          <img alt="email" src="src/img/gmail.png" class="size-8">
+          <h5>xijofofficial@gmail.com</h5>
+      </div>
+
+      <div class="flex flex-row gap-4">
+          <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
+          <p>0923-456-1678</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
+          <div>
+              <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
+              <p>divinagraciaxian@gmail.com</p>
+              <p>0947-887-1111</p>
+          </div>
+          <div>
+              <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
+              <p>joffere7@gmail.com</p>
+              <p>0951-519-9488</p>
+          </div>
+      </div>
+
+      <div class="text-center mt-8">
+          <p class="text-sm font-bold">
+              &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
+          </p>
+      </div>
+  </div>
+</footer>
+  
+</body>
+</html>

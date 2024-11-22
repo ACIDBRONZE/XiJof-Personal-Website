@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="src/img/favicon.png" type="image/png">
+    <title>XiJof Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/background.css">
+    <link rel="stylesheet" href="../src/scrollbar.css">
+    <script src="..\src\js\nav.js"></script>
+</head>
+
+<body class="h-full m-0 p-0 bg-[#252525] bg-cover bg-fixed h-screen flex flex-col overflow-x-hidden">
+    <!--page transition -->
+  <div id="transition-overlay" class="fixed inset-0 bg-[#1C1C1C] z-50 opacity-0 pointer-events-none transition-opacity duration-500 flex justify-center items-center">
+      <img src="src/img/favicon.png" class="w-auto h-auto max-w-[150px]">
+  </div>
+  
+  <!--Navbar-->
+  <header>
+     <!--Desktop Nav-->
+     <nav class="bg-[#1C1C1C] w-full z-10 top-0 left-0 fixed backdrop-blur bg-opacity-5 border-b border-gray-600 p-4">
+      <div class="flex justify-between items-center">
+        <a href="index.html"> <img class="h-8" alt="XiJof Logo" src="src/img/headerlogo.png"> </a> 
+  
+        <!--links-->
+          <div class="hidden lg:flex space-x-12">
+              <a href="index.html" class="text-white font-semibold hover:text-orange-500">HOME</a>
+              <a href="projects.html" class="text-white font-semibold hover:text-orange-500">PROJECTS</a>
+  
+              <!--hobbies-->
+              <div class="relative">
+                  <button class="text-white font-semibold hover:text-orange-500" onclick="deskdropdown()">HOBBIES</button>
+                  <ul id="desktopdrop" class="absolute bg-gray-700 rounded-md z-50 text-white space-y-w p-2 w-32 hidden">
+                      <li><a href="video.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">VIDEO</a></li>
+                      <li><a href="photography.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">PHOTO</a></li>
+                      <li><a href="gaming.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">GAMING</a></li>
+                      <li><a href="music.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">MUSIC</a></li>
+                  </ul>
+              </div>
+  
+              <a href="about.html" class="text-white font-semibold hover:text-orange-500">ABOUT</a>
+              <a href="contactform.html" class="text-white font-semibold hover:text-orange-500">CONTACT</a>
+              <div></div>
+          </div>
+  
+              <!--burger-->
+              <button id="burger" class="lg:hidden flex items-center text-white" onclick="openMenu()">
+                  <img alt="burger" src="src/img/hamburger.jpg" class="h-auto w-8">
+              </button>
+  
+                  <!-- Close Hamburger Button -->
+              <button id="closeburger" class="lg:hidden hidden flex items-center text-white" onclick="openMenu()">
+                   <img alt="close button" src="src/img/hamburgerexit.png" class="h-auto w-8">
+              </button>
+      </div>
+     </nav>
+  
+  <!--mobile menu-->
+     <div id="menu" class="lg:hidden hidden fixed inset-x-0 top-16 bottom-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center py-10 transition-all duration-500 ease-in-out opacity-100 h-screen overflow-hidden">
+  
+      <!-- Links -->
+      <a href="index.html" class="text-white font-semibold py-2 text-xl">HOME</a>
+      <a href="projects.html" class="text-white font-semibold py-2 text-xl">PROJECTS</a>
+  
+      <!-- Hobbies Dropdown -->
+      <div class="flex items-center justify-center relative"> 
+          <button type="button" id="mobilehobbies" class="text-white text-xl font-semibold py-2" onclick="dropdown()">HOBBIES</button>
+          
+          <ul id="dropdown" class="hidden z-50 absolute rounded-md bg-gray-700 text-white text-center space-y-2 p-2 w-48 mt-64 transition-all duration-300 ease-in-out"> 
+              <li><a href="video.html" class="block px-4 py-2">VIDEO</a><hr></li>
+              <li><a href="photography.html" class="block px-4 py-2">PHOTO</a><hr></li>
+              <li><a href="gaming.html" class="block px-4 py-2">GAMING</a><hr></li>
+              <li><a href="music.html" class="block px-4 py-2">MUSIC</a></li>
+          </ul>
+      </div>
+  
+      <a href="about.html" class="text-white font-semibold py-2 text-xl">ABOUT</a>
+      <a href="contactform.html" class="text-white font-semibold py-2 text-xl">CONTACT</a>
+  
+    </header>
+  <!--scroll progress-->
+  <div class="fixed invisible top-0 left-0 w-full h-4 bg-gray-200 lg:h-64 lg:w-4 lg:top-24 lg:left-4 lg:visible">
+      <div id="scroll-progress" class="w-full h-full bg-red-500 lg:w-4 lg:h-4"></div>
+  </div>
+
+<main>
+<!--musiic player component-->
+<div class="p-4 flex justify-center items-center h-screen mt-12 mb-24">
+  <audio id="audio-player" preload="auto"></audio>
+  <div class="bg-[#323232] p-8 rounded-lg shadow-md w-80">
+
+    <img id="album-cover" src="img/albumcover.png" alt="album cover" class="w-64 h-64 mx-auto rounded-lg mb-4 shadow-lg shadow-teal-50">
+    
+    <h2 id="song-title" class="text-xl font-semibold text-center text-[#B0B0B0]"></h2>
+    
+    <p id="artist-name" class="text-[#B0B0B0] text-sm text-center"></p>
+
+    <div class="mt-6 flex justify-center items-center">
+      <button id="prev-song" class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none">
+
+        <svg width="64px" height="64px" viewBox="0 0 24 24" class="w-4 h-4 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)">
+          <path d="M16.6598 14.6474C18.4467 13.4935 18.4467 10.5065 16.6598 9.35258L5.87083 2.38548C4.13419 1.26402 2 2.72368 2 5.0329V18.9671C2 21.2763 4.13419 22.736 5.87083 21.6145L16.6598 14.6474Z" fill="#000000"></path>
+          <path d="M22.75 5C22.75 4.58579 22.4142 4.25 22 4.25C21.5858 4.25 21.25 4.58579 21.25 5V19C21.25 19.4142 21.5858 19.75 22 19.75C22.4142 19.75 22.75 19.4142 22.75 19V5Z" fill="#000000"></path>
+        </svg>
+      </button>
+
+      <button id="play-pause" class="p-4 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none mx-4">
+
+        <svg id="play-pause-icon" width="64px" height="64px" viewBox="0 0 24 24" class="w-6 h-6 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <path id="play-path" d="M8 5V19L19 12L8 5Z" fill="#000000"></path> <!-- Play icon path (triangle) -->
+        </svg>
+      </button>
+
+      <button id="next-song" class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none">
+
+        <svg width="64px" height="64px" viewBox="0 0 24 24" class="w-4 h-4 text-gray-600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.6598 14.6474C18.4467 13.4935 18.4467 10.5065 16.6598 9.35258L5.87083 2.38548C4.13419 1.26402 2 2.72368 2 5.0329V18.9671C2 21.2763 4.13419 22.736 5.87083 21.6145L16.6598 14.6474Z" fill="#000000"></path>
+          <path d="M22.75 5C22.75 4.58579 22.4142 4.25 22 4.25C21.5858 4.25 21.25 4.58579 21.25 5V19C21.25 19.4142 21.5858 19.75 22 19.75C22.4142 19.75 22.75 19.4142 22.75 19V5Z" fill="#000000"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="progress-bar" class="mt-6 bg-gray-200 h-2 rounded-full">
+      <div id="progress" class="bg-teal-500 h-2 rounded-full w-0"></div>
+    </div>
+
+    <div class="flex justify-between mt-2 text-sm text-[#B0B0B0]">
+      <span id="current-time">0:00</span>
+      <span id="duration">3:53</span>
+    </div>
+
+  </div>
+</div>
+
+<!--behind the scenes-->
+<div class="container mx-auto p-4 mt-24">
+  <div class="flex flex-col lg:items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 p-4">
+
+    <div class="flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
+        <img src="src/img/musicphoto1.png" alt="Xian's Photo" class="lg:w-1/2 w-full cursor-pointer rounded-lg border-4 border-white">
+      <div class="space-y-2 lg:space-x-4 lg:text-left p-4">
+        <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">Xian Divinagracia</h6>
+        <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">When I make music, I use FL Studio because it is one of the most popular software programs for music producers. While I haven't created a full music track yet, I'm still learning about it, as well as music theory, and playing acoustic and electric instruments when I have the budget for them. One day, I will become a well-known and respected music artist in the industry.</p>
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row items-center justify-center w-full">
+      <img src="src/img/musicphoto2.jpg" alt="Joffer's Photo" class="flex lg:hidden 1/3 lg:w-1/4 cursor-pointer rounded-lg border-4 border-white">
+      <div class="space-y-2">
+        <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:ml-24 lg:text-left">Joffer Escoto</h6>
+        <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">My favorite song to sing is 'Be More' by Stephen Sanchez because its moody and emotional tone resonates deeply with me. I love Pop Soul as a genre because it blends the catchy elements of pop music with the emotional depth of soul, creating something both engaging and heartfelt. Within this genre, my favorite song is 'Until I Found You' by Stephen Sanchez, as its heartfelt lyrics and soothing melody captivate me every time I listen to it.</p>  
+      </div>
+      <img src="src/img/musicphoto2.jpg" alt="Joffer's Photo" class="hidden lg:flex w-1/4 cursor-pointer rounded-lg border-4 border-white">
+    </div>
+
+  </div>
+</div>
+</main>
+
+<!--bg animation-->
+<div class="area w-full h-screen fixed top-0 left-0 overflow-hidden">
+  <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>
+</div>
+
+<!--footer-->
+<footer class="bg-[#121212] text-white w-screen lg:w-full mt-auto py-3 px-0">
+  <div class="container mx-auto flex flex-col items-center justify-center text-center space-y-8">
+      <div class="flex flex-col items-center">
+          <h6 class="text-3xl font-bold mb-2">CONNECT WITH US</h6>
+          <hr class="w-full my-2">
+
+          <ul class="flex space-x-4 justify-center mt-2">
+              <li><a href="https://www.facebook.com"><img src="src/img/facebook.png" alt="Facebook" class="w-8 h-8"></a></li>
+              <li><a href="https://www.instagram.com"><img src="src/img/instagram.png" alt="Instagram" class="w-8 h-8"></a></li>
+              <li><a href="https://www.youtube.com"><img src="src/img/youtube.png" alt="Youtube" class="w-8 h-8"></a></li>
+              <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
+          </ul>
+      </div>
+      
+      <div class="flex flex-row gap-4">
+          <img alt="email" src="src/img/gmail.png" class="size-8">
+          <h5>xijofofficial@gmail.com</h5>
+      </div>
+
+      <div class="flex flex-row gap-4">
+          <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
+          <p>0923-456-1678</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
+          <div>
+              <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
+              <p>divinagraciaxian@gmail.com</p>
+              <p>0947-887-1111</p>
+          </div>
+          <div>
+              <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
+              <p>joffere7@gmail.com</p>
+              <p>0951-519-9488</p>
+          </div>
+      </div>
+
+      <div class="text-center mt-8">
+          <p class="text-sm font-bold">
+              &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
+          </p>
+      </div>
+  </div>
+</footer>
+
+</body>
+<script src="..\src\js\music.js"></script>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="h-full m-0 p-0">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>XiJof Personal Website</title>
+        <link rel="icon" href="src/img/favicon.png" type="image/png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="../src/background.css">
+        <link rel="stylesheet" href="../src/animations.css">
+        <link rel="stylesheet" href="../src/scrollbar.css">
+        <script src="src/js/nav.js"></script>
+
+    </head>
+    <body class="h-full m-0 p-0 bg-[#252525] bg-cover bg-fixed h-screen flex flex-col overflow-x-hidden">
+    <!--page transition -->
+<div id="transition-overlay" class="fixed inset-0 bg-[#1C1C1C] z-50 opacity-0 pointer-events-none transition-opacity duration-500 flex justify-center items-center">
+        <img src="src/img/favicon.png" class="w-auto h-auto max-w-[150px]">
+</div>
+
+<!--Nav Bar-->
+<header>
+   <!--Desktop Nav-->
+   <nav class="bg-[#1C1C1C] w-full z-10 top-0 left-0 fixed backdrop-blur bg-opacity-5 border-b border-gray-600 p-4">
+    <div class="flex justify-between items-center">
+      <a href="index.html"> <img class="h-8" alt="XiJof Logo" src="src/img/headerlogo.png"> </a> 
+
+      <!--links-->
+        <div class="hidden lg:flex space-x-12">
+            <a href="index.html" class="text-white font-semibold hover:text-orange-500">HOME</a>
+            <a href="projects.html" class="text-white font-semibold hover:text-orange-500">PROJECTS</a>
+
+            <!--hobbies-->
+            <div class="relative">
+                <button class="text-white font-semibold hover:text-orange-500" onclick="deskdropdown()">HOBBIES</button>
+                <ul id="desktopdrop" class="absolute bg-gray-700 rounded-md z-50 text-white space-y-w p-2 w-32 hidden">
+                    <li><a href="video.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">VIDEO</a></li>
+                    <li><a href="photography.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">PHOTO</a></li>
+                    <li><a href="gaming.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">GAMING</a></li>
+                    <li><a href="music.html" class="block rounded-sm px-4 py-2 hover:bg-gray-600">MUSIC</a></li>
+                </ul>
+            </div>
+
+            <a href="about.html" class="text-white font-semibold hover:text-orange-500">ABOUT</a>
+            <a href="contactform.html" class="text-white font-semibold hover:text-orange-500">CONTACT</a>
+            <div></div>
+        </div>
+
+            <!--burger-->
+            <button id="burger" class="lg:hidden flex items-center text-white" onclick="openMenu()">
+                <img alt="burger" src="src/img/hamburger.jpg" class="h-auto w-8">
+            </button>
+
+                <!-- Close Hamburger Button -->
+            <button id="closeburger" class="lg:hidden hidden flex items-center text-white" onclick="openMenu()">
+                 <img alt="close button" src="src/img/hamburgerexit.png" class="h-auto w-8">
+            </button>
+    </div>
+   </nav>
+
+<!--mobile menu-->
+   <div id="menu" class="lg:hidden hidden fixed inset-x-0 top-16 bottom-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center py-10 transition-all duration-500 ease-in-out opacity-100 h-screen overflow-hidden">
+
+    <!-- Links -->
+    <a href="index.html" class="text-white font-semibold py-2 text-xl">HOME</a>
+    <a href="projects.html" class="text-white font-semibold py-2 text-xl">PROJECTS</a>
+
+    <!-- Hobbies Dropdown -->
+    <div class="flex items-center justify-center relative"> 
+        <button type="button" id="mobilehobbies" class="text-white text-xl font-semibold py-2" onclick="dropdown()">HOBBIES</button>
+        
+        <ul id="dropdown" class="hidden z-50 absolute rounded-md bg-gray-700 text-white text-center space-y-2 p-2 w-48 mt-64 transition-all duration-300 ease-in-out"> 
+            <li><a href="video.html" class="block px-4 py-2">VIDEO</a><hr></li>
+            <li><a href="photography.html" class="block px-4 py-2">PHOTO</a><hr></li>
+            <li><a href="gaming.html" class="block px-4 py-2">GAMING</a><hr></li>
+            <li><a href="music.html" class="block px-4 py-2">MUSIC</a></li>
+        </ul>
+    </div>
+
+    <a href="about.html" class="text-white font-semibold py-2 text-xl">ABOUT</a>
+    <a href="contactform.html" class="text-white font-semibold py-2 text-xl">CONTACT</a>
+
+</header>
+<!--scroll progress-->
+<div class="fixed invisible top-0 left-0 w-full h-4 bg-gray-200 lg:h-64 lg:w-4 lg:top-24 lg:left-4 lg:visible">
+    <div id="scroll-progress" class="w-full h-full bg-red-500 lg:w-4 lg:h-4"></div>
+</div>
+
+<main>
+      <!--Introduction-->
+<br><br><br><br><br>
+      <div class="container mx-auto">
+          <div class="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 p-4">
+  
+              <div class=" flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
+
+                <div class="relative w-64 h-64 cursor-pointer">
+                    <div class="flip-container w-full h-full relative" onclick="changeperson()">
+                        <div class="flip-card w-full h-full relative">
+                            <img id="person-image" src="src/img/xianhome.jpg" alt="photo" class="flip-image w-full h-full object-cover rounded-sm shadow-md border-2 border-white transition-opacity duration-500">
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="space-y-2 md:w-2/3 lg:w-1/2 lg:space-x-4 lg:text-left p-4">
+                    <h1 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">HELLO THERE!</h1>
+                        
+                    <h2 id="name" class="text-3xl transition-opacity duration-500 ease-in-out text-center lg:text-left text-[#E0E0E0] font-bold">I'M XIAN DIVINAGRACIA</h2>
+                      <p id="intropara" class="text-[#B0B0B0] text-md lg:text-lg indent-2 lg:text-left transition-opacity duration-500 ease-in-out">An aspiring programmer and multimedia artist; I enjoy creating things 
+                        like art, videos, and programs. I am committed to learning things even on rest days. 
+                        I have a deep passion for C++, Java, and soon Python, 
+                        with a goal of being a professional software developer in the industry.</p>
+                        <div class="flex flex-row gap-4 size-8 lg:size-12">
+                            <img id="icon1" alt="tailwind" src="src/img/tailwind.png" class="transition-opacity duration-500 ease-in-out">
+                            <img id="icon2" alt="javascript" src="src/img/js.png" class="transition-opacity duration-500 ease-in-out">
+                            <img id="icon3" alt="c++" src="src/img/c-.png" class="transition-opacity duration-500 ease-in-out">
+                            <img id="icon4" alt="java" src="src/img/java.png" class="transition-opacity duration-500 ease-in-out">
+                        </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+      <!--Selected Works-->
+      <div class="mt-48"></div>
+      <h2 class="font-semibold text-xl lg:text-3xl text-[#E0E0E0] text-center mb-8">PREVIEW OF SELECTED WORKS</h2>
+
+      <div class="container mx-auto p-4 bg-[#323232]">
+        <div class="gap-8 flex flex-wrap md:flex-row justify-between">
+            <div class="mx-auto flex flex-col max-w-sm shadow-md">
+                <img alt="photo" src="src/img/projprev1.png" class="w-32 lg:w-64 md:w-48">
+                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
+                    <h5 class="text-center font-normal text-lg text-white">To-Do List System</h5>
+                    <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> A console program made in C++ Language that creates, reads, updates, and deletes tasks. 
+                        You can mark it as done or edit the task name and due date.
+                        This was used as a demo for the CRUD System in CC-103.</p>
+                </div>
+            </div>
+
+            <div class="mx-auto flex flex-col max-w-sm shadow-md">
+                <img alt="photo" src="src/img/projprev2.png" class="w-32 h-32 lg:h-64 lg:w-64 md:h-48 md:w-48">
+                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
+                    <h5 class="text-center font-normal text-lg text-white">Coin Change Counter</h5>
+                    <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> A C++ console program initially made in C language for the CS50x Week 1 "Cash" Problem Set.
+                        By using loops and a single if-else statement, it outputs the minimum 
+                        American coins needed for change.</p>
+                </div>
+            </div>
+
+            <div class="mx-auto flex flex-col max-w-sm shadow-md">
+                <img alt="photo" src="src/img/projprev6.jpg" class="w-32 lg:h-64 lg:w-64 md:w-48">
+                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
+                    <h5 class="text-center font-normal text-lg text-white">Sum Quotient Program</h5>
+                    <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> This C++ program prompts the user to enter ten numbers 
+                        and calculates the sum andf quotient of all the numbers. This program demonstrates array manipulation, 
+                        and conditional arithmetic in C++.</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <div  class="text-center text-[#B0B0B0] text-xl mt-8 ml-12 border-2 border-black w-32 rounded-md cursor-pointer hover:text-white hover:shadow-xl hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]">
+        <a href="projects.html"><h4>SEE MORE...</h4></a>
+        </div>
+      </div>
+
+      <!--HOBBIES-->
+      <div class="mt-32"></div>
+      <h2 class="text-5xl text-center font-semibold text-[#E0E0E0]">OUR HOBBIES</h2>
+
+      <div class="container mx-auto p-4">
+        <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center items-center">
+
+            <div class="flex flex-col max-w-sm justify-center items-center">
+                <a href="video.html">
+                    <img id="video-hobbies" alt="video" src="src/img/video-camera.png"  class="hobbicon w-48">
+                </a>
+                <h3 class="text-[#E0E0E0] text-center text-2xl">VIDEO/EDITING</h3>
+            </div>
+            
+            <div class="flex flex-col max-w-sm justify-center items-center">
+                <a href="photography.html">
+                    <img id="photo-hobbies" alt="photo" src="src/img/camera.png"  class="hobbicon w-48">
+                </a>
+                <h3 class="text-[#E0E0E0] text-center text-2xl">PHOTO</h3>
+            </div>
+            
+            <div class="flex flex-col max-w-sm justify-center items-center">
+                <a href="gaming.html">
+                    <img id="gaming-hobbies" alt="gaming" src="src/img/game-controller.png" class="hobbicon w-48">
+                </a>
+                <h3 class="text-[#E0E0E0] text-center text-2xl">GAMING</h3>
+            </div>
+            
+            <div class="flex flex-col max-w-sm justify-center items-center">
+                <a href="music.html">
+                    <img id="music-hobbies" alt="music" src="src/img/musical-note.png" class="hobbicon w-44">
+                </a>
+                <h3 class="text-[#E0E0E0] text-center text-2xl">MUSIC</h3>
+            </div>
+            
+        </div>
+      </div>
+  
+    <div  class="mt-24"></div>
+</main>
+
+<!--bg animation-->
+<div class="area w-full h-screen fixed top-0 left-0 overflow-hidden">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<!--footer-->
+<footer class="bg-[#121212] text-white w-screen lg:w-full mt-auto py-3 px-0">
+    <div class="container mx-auto flex flex-col items-center justify-center text-center space-y-8">
+        <div class="flex flex-col items-center">
+            <h6 class="text-3xl font-bold mb-2">CONNECT WITH US</h6>
+            <hr class="w-full my-2">
+  
+            <ul class="flex space-x-4 justify-center mt-2">
+                <li><a href="https://www.facebook.com"><img src="src/img/facebook.png" alt="Facebook" class="w-8 h-8"></a></li>
+                <li><a href="https://www.instagram.com"><img src="src/img/instagram.png" alt="Instagram" class="w-8 h-8"></a></li>
+                <li><a href="https://www.youtube.com"><img src="src/img/youtube.png" alt="Youtube" class="w-8 h-8"></a></li>
+                <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
+            </ul>
+        </div>
+        
+        <div class="flex flex-row gap-4">
+            <img alt="email" src="src/img/gmail.png" class="size-8">
+            <h5>xijofofficial@gmail.com</h5>
+        </div>
+  
+        <div class="flex flex-row gap-4">
+            <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
+            <p>0923-456-1678</p>
+        </div>
+  
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
+            <div>
+                <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
+                <p>divinagraciaxian@gmail.com</p>
+                <p>0947-887-1111</p>
+            </div>
+            <div>
+                <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
+                <p>joffere7@gmail.com</p>
+                <p>0951-519-9488</p>
+            </div>
+        </div>
+  
+        <div class="text-center mt-8">
+            <p class="text-sm font-bold">
+                &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+  </footer>
+</body>
+<script src="src/js/index.js"></script>
+</html>
