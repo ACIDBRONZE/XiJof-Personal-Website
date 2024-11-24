@@ -17,23 +17,3 @@
   .fade-in-on-scroll {
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   }
-  /*
-  ::-webkit-scrollbar-track {
-    background: #333333;  
-    border-radius: 6px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #4D8B9C; 
-    border-radius: 6px;
-    border: 3px solid #333333;  
-    transition: width 0.3s ease, height 0.3s ease;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #3D6A7C; 
-  }
-  
-  ::-webkit-scrollbar-horizontal {
-    height: 8px;
-  } */
