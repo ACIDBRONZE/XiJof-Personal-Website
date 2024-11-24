@@ -12,12 +12,12 @@ function checkFields() {
 
   if (allFilled) {
     submitButton.removeAttribute('disabled');
-    submitButton.classList.remove('bg-gray-800', 'text-gray-400', 'cursor-not-allowed');
+    submitButton.classList.remove('bg-gray-800', 'text-gray-400');
     submitButton.classList.add('bg-gray-300', 'text-black', 'cursor-pointer'); 
   } else {
     submitButton.setAttribute('disabled', 'true');
     submitButton.classList.remove('bg-gray-300', 'text-black', 'cursor-pointer');
-    submitButton.classList.add('bg-gray-800', 'text-gray-400', 'cursor-not-allowed');  
+    submitButton.classList.add('bg-gray-800', 'text-gray-400');  
   }
 }
 
@@ -46,9 +46,8 @@ submitButton.addEventListener('click', function(event) {
         submitButton.classList.remove('hidden');
 
         submitButton.setAttribute('disabled', 'true');
-        submitButton.style.cursor = 'not-allowed';
         submitButton.classList.remove('bg-gray-300', 'text-black', 'cursor-pointer');
-        submitButton.classList.add('bg-gray-800', 'text-gray-400', 'cursor-not-allowed');
+        submitButton.classList.add('bg-gray-800', 'text-gray-400');
       }, 3000);
     }, 2000);
 });
