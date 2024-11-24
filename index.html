@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="src/scrollbar.css">
         <link rel="stylesheet" href="src/output.css">
         <script src="src/js/nav.js"></script>
-
     </head>
     <body class="h-full m-0 p-0 bg-[#252525] bg-cover bg-fixed h-screen flex flex-col overflow-x-hidden">
     <!--page transition -->
@@ -92,7 +91,7 @@
       <div class="container mx-auto">
           <div class="flex flex-col lg:flex-row items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 p-4">
   
-              <div class=" flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
+              <div class=" flex flex-col lg:flex-row items-center justify-center space-x-4 w-full fade-in-on-scroll opacity-0 translate-y-10">
 
                 <div class="relative w-64 h-64 cursor-pointer">
                     <div class="flip-container w-full h-full relative" onclick="changeperson()">
@@ -101,7 +100,7 @@
 
                         </div>
                     </div>
-                    <img alt="switch" src="src/img/swap.png" id="swap-img" class="swap-image absolute right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 z-10 pointer-events-none transition-transform duration-500">
+                    <img alt="switch" src="src/img/swap.png" id="swap-img" class="swap-image absolute right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 pointer-events-none transition-transform duration-500">
 
                 </div>
                 <div class="mt-8 lg:mt-0"></div>
@@ -130,7 +129,7 @@
       <div class="mt-48"></div>
 
 
-      <div class="container mx-auto p-4 bg-[#323232]">
+      <div class="container mx-auto p-4 bg-[#323232] fade-in-on-scroll opacity-0 translate-y-10">
         <h2 class="font-semibold text-xl lg:text-3xl text-[#E0E0E0] text-center mb-8">PREVIEW OF SELECTED WORKS</h2>
         <div class="gap-8 flex justify-between text-justify">
             <div class="mx-auto flex flex-col max-w-sm shadow-md">
@@ -172,9 +171,9 @@
 
       <!--HOBBIES-->
       <div class="mt-32"></div>
-      <h2 class="text-5xl text-center font-semibold text-[#E0E0E0]">OUR HOBBIES</h2>
+      <h2 class="text-5xl text-center font-semibold text-[#E0E0E0] fade-in-on-scroll opacity-0 translate-y-10">OUR HOBBIES</h2>
 
-      <div class="container mx-auto p-4">
+      <div class="container mx-auto p-4 fade-in-on-scroll opacity-0 translate-y-10">
         <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-items-center items-center">
 
             <div class="flex flex-col max-w-sm justify-center items-center">
