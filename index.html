@@ -98,9 +98,13 @@
                     <div class="flip-container w-full h-full relative" onclick="changeperson()">
                         <div class="flip-card w-full h-full relative">
                             <img id="person-image" src="src/img/xianhome.jpg" alt="photo" class="flip-image w-full h-full object-cover rounded-sm shadow-md border-2 border-white transition-opacity duration-500">
+
                         </div>
                     </div>
+                    <img alt="switch" src="src/img/swap.png" id="swap-img" class="swap-image absolute right-6 top-1/2 transform -translate-y-1/2 w-8 h-8 z-10 pointer-events-none transition-transform duration-500">
+
                 </div>
+                <div class="mt-8 lg:mt-0"></div>
 
                   <div class="space-y-2 md:w-2/3 lg:w-1/2 lg:space-x-4 lg:text-left p-4">
                     <h1 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">HELLO THERE!</h1>
@@ -124,14 +128,15 @@
 
       <!--Selected Works-->
       <div class="mt-48"></div>
-      <h2 class="font-semibold text-xl lg:text-3xl text-[#E0E0E0] text-center mb-8">PREVIEW OF SELECTED WORKS</h2>
+
 
       <div class="container mx-auto p-4 bg-[#323232]">
-        <div class="gap-8 flex flex-wrap md:flex-row justify-between">
+        <h2 class="font-semibold text-xl lg:text-3xl text-[#E0E0E0] text-center mb-8">PREVIEW OF SELECTED WORKS</h2>
+        <div class="gap-8 flex justify-between text-justify">
             <div class="mx-auto flex flex-col max-w-sm shadow-md">
-                <img alt="photo" src="src/img/projprev1.png" class="w-32 lg:w-64 md:w-48">
-                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
-                    <h5 class="text-center font-normal text-lg text-white">To-Do List System</h5>
+                <img alt="photo" src="src/img/projprev1.png" class="w-32 lg:w-64 md:w-48 sm:w-32">
+                <div class="px-2 py-3 bg-gray-400 w-32 md:w-48 lg:w-64 sm:w-32">
+                    <h5 class="text-center font-semibold text-lg text-white">To-Do List System</h5>
                     <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> A console program made in C++ Language that creates, reads, updates, and deletes tasks. 
                         You can mark it as done or edit the task name and due date.
                         This was used as a demo for the CRUD System in CC-103.</p>
@@ -139,19 +144,19 @@
             </div>
 
             <div class="mx-auto flex flex-col max-w-sm shadow-md">
-                <img alt="photo" src="src/img/projprev2.png" class="w-32 h-32 lg:h-64 lg:w-64 md:h-48 md:w-48">
-                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
-                    <h5 class="text-center font-normal text-lg text-white">Coin Change Counter</h5>
+                <img alt="photo" src="src/img/projprev2.png" class="w-32 h-32 lg:h-64 lg:w-64 md:h-48 md:w-48 sm:w-32">
+                <div class="px-2 py-3 bg-gray-400 w-32 md:w-48 lg:w-64 sm:w-32">
+                    <h5 class="text-center font-semibold text-lg text-white">Coin Change Counter</h5>
                     <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> A C++ console program initially made in C language for the CS50x Week 1 "Cash" Problem Set.
                         By using loops and a single if-else statement, it outputs the minimum 
                         American coins needed for change.</p>
                 </div>
             </div>
 
-            <div class="mx-auto flex flex-col max-w-sm shadow-md">
-                <img alt="photo" src="src/img/projprev6.jpg" class="w-32 lg:h-64 lg:w-64 md:w-48">
-                <div class="bg-gray-400 w-32 md:w-48 lg:w-64">
-                    <h5 class="text-center font-normal text-lg text-white">Sum Quotient Program</h5>
+            <div class="mx-auto hidden flex-col max-w-sm shadow-md lg:flex">
+                <img alt="photo" src="src/img/projprev6.jpg" class="w-32 lg:h-64 lg:w-64 md:w-48 sm:w-32">
+                <div class="px-2 py-3 bg-gray-400 w-32 md:w-48 lg:w-64 sm:w-32">
+                    <h5 class="text-center font-semibold text-lg text-white">Sum Quotient Program</h5>
                     <p class="hidden text-sm mx-2 mb-4 indent-3 text-justifyy lg:flex"> This C++ program prompts the user to enter ten numbers 
                         and calculates the sum andf quotient of all the numbers. This program demonstrates array manipulation, 
                         and conditional arithmetic in C++.</p>
@@ -160,7 +165,7 @@
             
         </div>
 
-        <div  class="text-center text-[#B0B0B0] text-xl mt-8 ml-12 border-2 border-black w-32 rounded-md cursor-pointer hover:text-white hover:shadow-xl hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]">
+        <div  class="text-center text-[#B0B0B0] text-xl mt-8 mx-auto border-2 border-black w-32 rounded-md cursor-pointer hover:text-white hover:shadow-xl hover:border-white hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]">
         <a href="projects.html"><h4>SEE MORE...</h4></a>
         </div>
       </div>
@@ -236,37 +241,39 @@
                 <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
             </ul>
         </div>
-        
-        <div class="flex flex-row gap-4">
-            <img alt="email" src="src/img/gmail.png" class="size-8">
-            <h5>xijofofficial@gmail.com</h5>
-        </div>
   
-        <div class="flex flex-row gap-4">
-            <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
-            <p>0923-456-1678</p>
+      <div class="flex lg:flex-row">
+        <div class="flex gap-2 items-center">
+          <img alt="email" src="src/img/gmail.png" class="w-8 h-8">
+          <h5>xijofofficial@gmail.com</h5>
+        </div>
+      </div>
+    
+        <div class="flex gap-2 items-center">
+          <img alt="phone" src="src/img/phone.png" class="w-8 h-8">
+          <p>0923-456-1678</p>
         </div>
   
         <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
             <div>
-                <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
-                <p>divinagraciaxian@gmail.com</p>
-                <p>0947-887-1111</p>
+                <h5 class="text-center text-md font-semibold">Xian Divinagracia</h5>
+                <p class="text-xs">divinagraciaxian@gmail.com</p>
+                <p class="text-xs">0947-887-1111</p>
             </div>
             <div>
-                <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
-                <p>joffere7@gmail.com</p>
-                <p>0951-519-9488</p>
+                <h5 class="text-center text-md font-semibold">Joffer Escoto</h5>
+                <p class="text-xs">joffere7@gmail.com</p>
+                <p class="text-xs">0951-519-9488</p>
             </div>
         </div>
   
-        <div class="text-center mt-8">
-            <p class="text-sm font-bold">
+        <div class=" text-sm  text-center mt-8">
+            <p class="font-bold">
                 &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
             </p>
         </div>
     </div>
-  </footer>
+</footer>
 </body>
 <script src="src/js/index.js"></script>
 </html>

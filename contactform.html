@@ -97,14 +97,12 @@
                 </h2>
     
                 <form id="contactForm" class="flex flex-col gap-4 w-64">
-                    <input type="text" id="name" placeholder="Name" required class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
-                    <input type="email" id="email" placeholder="E-mail" required class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
-                    <input type="tel" id="phone" placeholder="Phone Number" required class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
-                    <textarea id="message" placeholder="Your Message..." required class="h-32 w-64 text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent resize-none"></textarea>
+                    <input type="text" id="name" placeholder="Name"  class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
+                    <input type="email" id="email" placeholder="E-mail"  class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
+                    <input type="text" id="subject" placeholder="Subject"  class="h-8 w-full text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent">
+                    <textarea id="message" placeholder="Your Message..."  class="h-32 w-64 text-white focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] pl-2 border-2 border-black placeholder-[#E0E0E0] backdrop-blur-sm bg-transparent resize-none"></textarea>
     
-                    <button id="submit" type="submit" disabled class="h-12 w-full rounded-md text-gray-400 bg-gray-700 cursor-not-allowed border-2 border-gray-500 focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] hover:border-gray-500">
-                        Send Message
-                    </button>
+                    <button id="submit" type="submit" class="h-12 w-full rounded-md text-gray-400  bg-gray-800 border-2 border-gray-500 focus:outline-none focus:ring-2 focus:ring-[#B0B0B0] hover:border-gray-500">Send Message</button>
                     <img id="loading" src="src/img/loading.gif" class="size-16 mx-auto hidden">
     
                     <div id="confirmation-message" class="flex items-center gap-2 mx-auto hidden">
@@ -147,37 +145,39 @@
                 <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
             </ul>
         </div>
-        
-        <div class="flex flex-row gap-4">
-            <img alt="email" src="src/img/gmail.png" class="size-8">
-            <h5>xijofofficial@gmail.com</h5>
-        </div>
   
-        <div class="flex flex-row gap-4">
-            <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
-            <p>0923-456-1678</p>
+      <div class="flex lg:flex-row">
+        <div class="flex gap-2 items-center">
+          <img alt="email" src="src/img/gmail.png" class="w-8 h-8">
+          <h5>xijofofficial@gmail.com</h5>
+        </div>
+      </div>
+    
+        <div class="flex gap-2 items-center">
+          <img alt="phone" src="src/img/phone.png" class="w-8 h-8">
+          <p>0923-456-1678</p>
         </div>
   
         <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
             <div>
-                <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
-                <p>divinagraciaxian@gmail.com</p>
-                <p>0947-887-1111</p>
+                <h5 class="text-center text-md font-semibold">Xian Divinagracia</h5>
+                <p class="text-xs">divinagraciaxian@gmail.com</p>
+                <p class="text-xs">0947-887-1111</p>
             </div>
             <div>
-                <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
-                <p>joffere7@gmail.com</p>
-                <p>0951-519-9488</p>
+                <h5 class="text-center text-md font-semibold">Joffer Escoto</h5>
+                <p class="text-xs">joffere7@gmail.com</p>
+                <p class="text-xs">0951-519-9488</p>
             </div>
         </div>
   
-        <div class="text-center mt-8">
-            <p class="text-sm font-bold">
+        <div class=" text-sm  text-center mt-8">
+            <p class="font-bold">
                 &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
             </p>
         </div>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
 <script src="src/js/contactform.js"></script>
