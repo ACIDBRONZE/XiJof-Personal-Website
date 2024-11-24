@@ -1,7 +1,8 @@
 ::-webkit-scrollbar {
-    width: 15px;  
+    width: 0.5px;  
+    visibility: hidden;
   }
-  
+  /*
   ::-webkit-scrollbar-track {
     background: #333333;  
     border-radius: 6px;
@@ -20,4 +21,4 @@
   
   ::-webkit-scrollbar-horizontal {
     height: 8px;
-  }
+  } */
