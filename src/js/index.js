@@ -3,27 +3,33 @@ let isFlipped = false;
 function changeperson() {
     const image = document.getElementById('person-image');  
     const flipCard = image.closest('.flip-card');  
+    const swapImage = document.getElementById('swap-img');
 
     flipCard.classList.toggle('flipped');  
 
-
     image.classList.add('opacity-0');  
     changeContent();  
-
 
     setTimeout(() => {
 
         if (!isFlipped) {
             image.src = 'src/img/jofferhome.jpg';  
-        } else {
+        } 
+        else {
             image.src = 'src/img/xianhome.jpg';  
         }
 
         image.classList.remove('opacity-0');  
 
-
         isFlipped = !isFlipped;
     }, 150);  
+
+    if (isFlipped) {
+        swapImage.style.transform = "rotateY(0deg)";  
+
+    } else {
+        swapImage.style.transform = "rotateY(180deg)"; 
+    }
 }
 
 function changeContent() {

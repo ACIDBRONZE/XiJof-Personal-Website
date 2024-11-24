@@ -9,6 +9,12 @@ thumbnails.forEach(img => {
     modal.classList.remove('hidden'); 
     modalImage.src = this.src; 
   });
+
+  img.addEventListener('touchstart', function (event) {
+    event.preventDefault(); 
+    modal.classList.remove('hidden'); 
+    modalImage.src = this.src;
+  });
 });
 
 modal.addEventListener('click', function (event) {

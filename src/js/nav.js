@@ -3,9 +3,20 @@
 // Transition fade in screen
 document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.getElementById('transition-overlay');
- 
-  document.querySelectorAll('a').forEach(link => {
+  
+  function showOverlay() {
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+    overlay.classList.remove('pointer-events-none');
+  }
 
+  function hideOverlay() {
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    overlay.classList.add('pointer-events-none');
+  }
+
+  document.querySelectorAll('a').forEach(link => {
     if (link.hasAttribute('no-overlay')) {
       return;
     }
@@ -13,15 +24,71 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener('click', function (event) {
       event.preventDefault();  
 
-      overlay.classList.remove('opacity-0');
-      overlay.classList.add('opacity-100');
-      overlay.classList.remove('pointer-events-none');
+      showOverlay(); 
 
       setTimeout(() => {
         window.location.href = link.href;
       }, 800);  
     });
   });
+
+  window.addEventListener('popstate', function () {
+    showOverlay();  
+    setTimeout(hideOverlay, 800);  
+  });
+
+  window.addEventListener('load', function () {
+    setTimeout(hideOverlay, 800);  
+  });
+
+  if (window.location.href === window.location.origin) {
+    hideOverlay();
+  }
+});document.addEventListener("DOMContentLoaded", function () {
+  const overlay = document.getElementById('transition-overlay');
+
+  function showOverlay() {
+    overlay.classList.remove('opacity-0');
+    overlay.classList.add('opacity-100');
+    overlay.classList.remove('pointer-events-none');
+  }
+
+  function hideOverlay() {
+    overlay.classList.remove('opacity-100');
+    overlay.classList.add('opacity-0');
+    overlay.classList.add('pointer-events-none');
+  }
+
+  document.querySelectorAll('a').forEach(link => {
+    if (link.hasAttribute('no-overlay')) {
+      return;
+    }
+
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); 
+
+      showOverlay();
+
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 800);  
+    });
+  });
+
+
+  window.addEventListener('popstate', function () {
+    showOverlay();
+    setTimeout(hideOverlay, 800); 
+  });
+
+  window.addEventListener('load', function () {
+    setTimeout(hideOverlay, 800);
+  });
+
+
+  if (window.location.href === window.location.origin) {
+    hideOverlay();
+  }
 });
 
 function openMenu() {
