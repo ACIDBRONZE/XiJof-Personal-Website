@@ -86,7 +86,7 @@
   </div>
 
 <main>
-  <div class="my-20"></div>
+  <div class="mt-8"></div>
 <!--musiic player component-->
 <div class="p-4 flex justify-center items-center h-screen mt-12 mb-24">
   <audio id="audio-player" preload="auto"></audio>
@@ -137,27 +137,32 @@
 </div>
 
 <!--behind the scenes-->
-<div class="container mx-auto p-4 mt-24">
-  <div class="flex flex-col lg:items-center justify-center space-y-4 lg:space-y-0 lg:space-x-4 p-4">
+<div class="container mx-auto">
+  <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
 
-    <div class="flex flex-col lg:flex-row items-center justify-center space-x-4 w-full">
-        <img src="src/img/musicphoto1.png" alt="Xian's Photo" class="lg:w-1/2 w-full cursor-pointer rounded-lg border-4 border-white">
-      <div class="space-y-2 lg:space-x-4 lg:text-left p-4">
-        <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:text-left">Xian Divinagracia</h6>
-        <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">When I make music, I use FL Studio because it is one of the most popular software programs for music producers. While I haven't created a full music track yet, I'm still learning about it, as well as music theory, and playing acoustic and electric instruments when I have the budget for them. One day, I will become a well-known and respected music artist in the industry.</p>
-      </div>
-    </div>
+      <img alt="Xian's Photo" src="src/img/musicphoto1.png" class="w-96 border border-4 rounded-md border-white border-w">
 
-    <div class="flex flex-col lg:flex-row items-center justify-center w-full">
-      <img src="src/img/musicphoto2.jpg" alt="Joffer's Photo" class="flex lg:hidden 1/3 lg:w-1/4 cursor-pointer rounded-lg border-4 border-white">
-      <div class="space-y-2">
-        <h6 class="text-3xl text-[#E0E0E0] font-semibold text-center lg:ml-24 lg:text-left">Joffer Escoto</h6>
-        <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-32 lg:mr-12">My favorite song to sing is 'Be More' by Stephen Sanchez because its moody and emotional tone resonates deeply with me. I love Pop Soul as a genre because it blends the catchy elements of pop music with the emotional depth of soul, creating something both engaging and heartfelt. Within this genre, my favorite song is 'Until I Found You' by Stephen Sanchez, as its heartfelt lyrics and soothing melody captivate me every time I listen to it.</p>  
+      <div class="w-80 lg:w-1/2 lg:mr-96">
+        <h1 class="text-center lg:text-left text-lg lg:text-3xl font-semibold text-[#E0E0E0]">XIAN DIVINAGRACIA</h1>
+        <p class="text-justify indent-3 mb-4 text-[#B0B0B0]">When I make music, I use FL Studio because it is one of the most popular software programs for music producers. While I haven't created a full music track yet, I'm still learning about it, as well as music theory, and playing acoustic and electric instruments when I have the budget for them. One day, I will become a well-known and respected music artist in the industry.</p>
       </div>
-      <img src="src/img/musicphoto2.jpg" alt="Joffer's Photo" class="hidden lg:flex w-1/4 cursor-pointer rounded-lg border-4 border-white">
-    </div>
 
   </div>
+
+  <div class="mt-24"></div>
+
+  <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
+
+    <img alt="Joffer's Photo" src="src/img/musicphoto2.jpg" class="w-64 border border-4 rounded-md border-white border-w">
+
+    <div class="w-80 lg:w-1/2">
+      <h1 class="text-center lg:text-left text-lg lg:text-3xl font-semibold text-[#E0E0E0]">JOFFER ESCOTO</h1>
+      <p class="text-justify indent-3 mb-4 text-[#B0B0B0]">My favorite song to sing is 'Be More' by Stephen Sanchez because its moody and emotional tone resonates deeply with me. I love Pop Soul as a genre because it blends the catchy elements of pop music with the emotional depth of soul, creating something both engaging and heartfelt. Within this genre, my favorite song is 'Until I Found You' by Stephen Sanchez, as its heartfelt lyrics and soothing melody captivate me every time I listen to it.</p>
+    </div>
+
+</div>
+
+<div class="mt-12"></div>
 </div>
 </main>
 
@@ -191,32 +196,34 @@
               <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
           </ul>
       </div>
-      
-      <div class="flex flex-row gap-4">
-          <img alt="email" src="src/img/gmail.png" class="size-8">
-          <h5>xijofofficial@gmail.com</h5>
-      </div>
 
-      <div class="flex flex-row gap-4">
-          <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
-          <p>0923-456-1678</p>
+    <div class="flex lg:flex-row">
+      <div class="flex gap-2 items-center">
+        <img alt="email" src="src/img/gmail.png" class="w-8 h-8">
+        <h5>xijofofficial@gmail.com</h5>
+      </div>
+    </div>
+  
+      <div class="flex gap-2 items-center">
+        <img alt="phone" src="src/img/phone.png" class="w-8 h-8">
+        <p>0923-456-1678</p>
       </div>
 
       <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
           <div>
-              <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
-              <p>divinagraciaxian@gmail.com</p>
-              <p>0947-887-1111</p>
+              <h5 class="text-center text-md font-semibold">Xian Divinagracia</h5>
+              <p class="text-xs">divinagraciaxian@gmail.com</p>
+              <p class="text-xs">0947-887-1111</p>
           </div>
           <div>
-              <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
-              <p>joffere7@gmail.com</p>
-              <p>0951-519-9488</p>
+              <h5 class="text-center text-md font-semibold">Joffer Escoto</h5>
+              <p class="text-xs">joffere7@gmail.com</p>
+              <p class="text-xs">0951-519-9488</p>
           </div>
       </div>
 
-      <div class="text-center mt-8">
-          <p class="text-sm font-bold">
+      <div class=" text-sm  text-center mt-8">
+          <p class="font-bold">
               &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
           </p>
       </div>

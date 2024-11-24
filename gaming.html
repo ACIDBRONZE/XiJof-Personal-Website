@@ -13,6 +13,21 @@
       .clips::-webkit-scrollbar{
         display: none;
       }
+      .pick-card {
+      transition: transform 0.3s ease;
+      }
+
+      @media (min-width: 1024px) {
+      .pick-card:hover {
+      transform: translateY(-30px);
+      }
+      }
+
+      @media (max-width: 1023px) {
+      .pick-card:hover {
+      transform: none; /* Disable hover transform */
+      }
+      }
     </style>
 </head>
 
@@ -91,53 +106,57 @@
 </div>
 
 <main>
+  <div class="mt-32"></div>
 
-  <div class="container mx-auto mt-32 mb-48">
-  <div class="flex flex-col sm:flex-row justify-center sm:gap-8">
-      
-      <!-- First Card -->
-      <div class="mb-8 sm:mb-0">
-        <a href="gaming.html">
-          <div class="py-8 bg-red-500 rounded-lg shadow-md transition-transform duration-300 ease lg:hover:translate-y-[-30px] md:hover:translate-y-[-30px]">
-            <div class="text-white mb-4 text-center">
-              <h3 class="font-bold text-lg">DeltAcidity (Acidity)</h3>
-              <h4 class="text-lg">Xian Divinagracia</h4>
-            </div>
-            <img alt="photo" src="src/img/xianhome.jpg" class="w-48 h-48 object-cover mx-auto cursor-pointer">
-            <div class="text-white mt-2 text-center flex flex-row gap-4 items-center justify-center">
-              <img alt="game" src="src/img/arcaea.jpg" class="size-8" title="Arcaea">
-              <img alt="game" src="src/img/maimai.png" class="size-8" title="maimai">
-              <img alt="game" src="src/img/starrail.png" class="size-8" title="Honkai: Star Rail">
-              <img alt="game" src="src/img/taiko.png" class="size-8" title="Taiko no Tatsujin: Rhythm Festival">
-            </div>
-          </div>
-        </a>
+<div class="container mx-auto">
+  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+
+  <a href="gaming.html">
+    <div class="flex flex-col py-8 px-0 bg-red-500 rounded-md shadow-md pick-card">
+
+      <div class="transition-transform">
+        <h1 class="font-semibold text-center text-[#E0E0E0] text-lg">DeltAcidity (Acidity)</h1>
+        <h1 class="font-semibold text-center text-[#E0E0E0] text-md">Xian Divinagracia</h1>
+        <img alt="photo" src="src/img/xianhome.jpg" class="w-48 h-48 object-cover mx-auto mb-2 ">
+        <ul class="flex flex-row items-center justify-center gap-4">
+         <li><img alt="game" src="src/img/arcaea.jpg" title="Arcaea" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/starrail.png" title="Honkai: Star Rail" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/maimai.png" title="maimai" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/taiko.png" title="Taiko no Tatsujin" class="w-8 h-8 rounded-md"></li>
+        </ul>
       </div>
-  
-      <!-- Second Card -->
-      <div class="mb-8 sm:mb-0">
-        <a href="gaming2.html">
-          <div class="py-8 bg-red-500 rounded-lg shadow-md transition-transform duration-300 ease lg:hover:translate-y-[-30px] md:hover:translate-y-[-30px]">
-            <div class="text-white mb-4 text-center">
-              <h3 class="font-bold text-lg">Fuush13</h3>
-              <h4 class="text-lg">Joffer Escoto</h4>
-            </div>
-            <img alt="photo" src="src/img/joffergaming.jpg" class="w-48 h-48 object-cover mx-auto cursor-pointer">
-            <div class="text-white mt-2 text-center flex flex-row gap-4 items-center justify-center">
-              <img alt="game" src="src/img/dyinglight.png" class="size-8" title="Dying Light (2015)">
-              <img alt="game" src="src/img/arenabreakout.png" class="size-8" title="Arena Breakout">
-              <img alt="game" src="src/img/roblox.png" class="size-8" title="Roblox">
-              <img alt="game" src="src/img/mobilelegends.png" class="size-8" title="Mobile Legends: Bang bang">
-            </div>
-          </div>
-        </a>
+
+    </div>
+  </a>
+
+  <a href="gaming.html">
+    <div class="flex flex-col py-8 px-0 bg-red-500 rounded-md shadow-md pick-card">
+
+      <div class="transition-transform">
+        <h1 class="font-semibold text-center text-[#E0E0E0] text-lg">Fuush13</h1>
+        <h1 class="font-semibold text-center text-[#E0E0E0] text-md">Joffer Escoto</h1>
+        <img alt="photo" src="src/img/joffergaming.jpg" class="w-48 h-48 object-cover mx-auto mb-2 ">
+        <ul class="flex flex-row items-center justify-center gap-4">
+         <li><img alt="game" src="src/img/arenabreakout.png" title="Arena Breakout" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/roblox.png" title="Roblox" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/dyinglight.png" title="Dying Light (2015)" class="w-8 h-8 rounded-md"></li>
+         <li><img alt="game" src="src/img/mobilelegends.png" title="Mobile Legends: Bang Bang" class="w-8 h-8 rounded-md"></li>
+        </ul>
       </div>
-  
-    
+
+    </div>
+  </a>
+
   </div>
-  </div>
+</div>
+
+
+
+
 
   <h1 class="font-semibold text-center text-4xl mt-24 text-[#E0E0E0]">CLIPS AND HIGHLIGHTS</h1>
+  <h6 class="font-semibold text-center text-[#E0E0E0]">✱scroll horizontally to view more clips/highlights</h6>
+
     <div class="flex items-center justify-center my-[5%] mx-auto relative">
         
       <img src="src/img/prev.png" id="prevbtn" class="hidden lg:flex w-[50px] cursor-pointer hover:brightness-75 absolute left-0 lg:left-28 mx-4">
@@ -147,30 +166,30 @@
       <div class="flex-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2">
 
         <span>
-          <img src="src/img/gamephoto1.jpg" class="thumbnail transition-transform duration-500 lg:hover:scale-110 w-full h-[154px] object-cover">
+          <img src="src/img/gamephoto1.jpg" class="thumbnail transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[154px] object-cover">
         </span>
 
         <span>
-          <img src="src/img/gameposter1.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-auto" data-video="src/media/gamevideo.mp4">
+          <img src="src/img/gameposter1.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[153px]" data-video="src/media/gamevideo.mp4">
         </span>
 
         <span>
-          <img src="src/img/gamephoto2.jpg" class="thumbnail transition-transform duration-500 lg:hover:scale-110 w-full h-auto object-cover">
+          <img src="src/img/gamephoto2.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[153px]" >
         </span>
 
       </div>
       
       <div class="flex-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-2">
         <span>
-          <img src="src/img/gameposter2.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[153px]" data-video="src/media/gamevideo2.mp4">
+          <img src="src/img/gameposter2.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[153px]" data-video="src/media/gamevideo2.mp4">
         </span>
 
         <span>
-          <img src="src/img/gameposter4.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-auto" data-video="src/media/gamevideo4.mp4">
+          <img src="src/img/gameposter4.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[154px]" data-video="src/media/gamevideo4.mp4">
         </span>
 
         <span>
-          <img src="src/img/gameposter3.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-[153px]" data-video="src/media/gamevideo3.mp4">
+          <img src="src/img/gameposter3.jpg" class="thumbnail video-poster transition-transform duration-500 lg:hover:scale-110 w-full h-32 lg:h-[153px]" data-video="src/media/gamevideo3.mp4">
         </span>
 
       </div>
@@ -180,25 +199,27 @@
     </div>
       
       <!--google drive aah modal preview-->
-      <div id="mediaModal" class="fixed inset-0 bg-black visible transition-opacity opacity-1 duration-300 ease-in-out bg-opacity-75 hidden items-center justify-center z-50">
-        <div class="relative w-full h-full flex items-center justify-center">
+<div id="mediaModal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+  <div class="relative w-full h-full flex items-center justify-center">
 
-          <div id="modalContent" class="flex justify-center items-center relative invisible max-w-[90%] max-h-[80vh] bg-white w-full max-w-4xl mx-auto pointer-events-none">
+    <div id="modalContent" class=" flex justify-center items-center relative  max-h-[80vh]  w-full max-w-4xl mx-auto pointer-events-none">
 
-            <img id="modalImage" class="visible max-w-[60%] max-h-[50%] object-contain hidden pointer-events-auto" />
+      <img id="modalImage" class="hidden max-w-full max-h-[80vh] object-contain pointer-events-auto" />
 
-            <video id="modalVideo" class="visible max-w-[60%] max-h-[50%] w-full h-auto object-contain hidden pointer-events-auto" controls>
-              <source id="modalVideoSource" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </div>
+      <video id="modalVideo" class="hidden max-w-full max-h-[80vh] w-full h-auto object-contain pointer-events-auto" controls>
+        <source id="modalVideoSource" type="video/mp4">
+      </video>
+      
+    </div>
+  </div>
+</div>
+
       
     <!--setup-->
     <div class="container mx-auto mt-24"> 
       <div class="flex flex-col items-center justify-center">
-        <div class="w-[95%] lg:w-1/2">
-          <img id="photosetup" alt="Setup" src="src/img/setup.jpg" class="w-full h-auto rounded-sm shadow-md">
+        <div class="mx-auto lg:w-1/2">
+          <img id="photosetup" alt="Setup" src="src/img/setup.jpg" class="w-96 lg:w-full h-auto rounded-sm shadow-md">
         </div>
     
         <div class="container mx-auto">
@@ -213,21 +234,17 @@
       
       <div class="container mx-auto p-4 mt-16">
 
-      <div class="flex flex-col lg:items-center justify-center space-y-4 lg:space-y-0 p-4">
- 
-        <div class="flex flex-col lg:flex-row items-center justify-center w-full">
-            <img src="src/img/gamephotobonus1.png" alt="maimai gameplay photo" class="flex lg:hidden w-1/2 rounded-lg border-4 mb-4 border-white">  
-          <div class="space-y-2">          
-            <p class="text-[#B0B0B0] text-md text-justify lg:text-lg indent-2 lg:ml-64 lg:mr-12 md:ml-12 md:mr-12 text-center">I've always love playing rhythm games ever since in 2017 where I saw an arcade machine that has the controlsmimicking a dj controller.
+        <div class="flex flex-col lg:flex-row gap-8 justify-center items-center">
+
+          <img alt="maimai gameplay photo" src="src/img/gamephotobonus1.png" class="w-64 border border-4 rounded-md border-white border-w">
+      
+          <div class="w-80 lg:w-1/2">
+            <p class="text-justify indent-3 mb-4 text-[#B0B0B0]">I've always love playing rhythm games ever since in 2017 where I saw an arcade machine that has the controlsmimicking a dj controller.
               I thought about that since majority of the people I know are better at playing Shooters, Chess, and MOBA; Rhythm Games are one thing that I am more confident 
-              in my own skills. I recommend these type of games since it trains your rhythm, serve as exercise, and a feeling of satisfaction when you're now beating a hard level of the game. 
-            </p>      
+              in my own skills. I recommend these type of games since it trains your rhythm, serve as exercise, and a feeling of satisfaction when you're now beating a hard level of the game. </p>
           </div>
-            <img src="src/img/gamephotobonus1.png" alt="maimai gameplay photo" class="hidden lg:flex w-1/4 rounded-lg border-4 border-white">
-          </div>
-
-        </div>
-
+      
+      </div>
       </div>
 </main>    
 
@@ -261,32 +278,34 @@
               <li><a href="https://www.github.com"><img src="src/img/github.png" alt="GitHub" class="w-8 h-8"></a></li>
           </ul>
       </div>
-      
-      <div class="flex flex-row gap-4">
-          <img alt="email" src="src/img/gmail.png" class="size-8">
-          <h5>xijofofficial@gmail.com</h5>
-      </div>
 
-      <div class="flex flex-row gap-4">
-          <img alt="phone" src="src/img/phone.png" class="size-8 mr-4">
-          <p>0923-456-1678</p>
+    <div class="flex lg:flex-row">
+      <div class="flex gap-2 items-center">
+        <img alt="email" src="src/img/gmail.png" class="w-8 h-8">
+        <h5>xijofofficial@gmail.com</h5>
+      </div>
+    </div>
+  
+      <div class="flex gap-2 items-center">
+        <img alt="phone" src="src/img/phone.png" class="w-8 h-8">
+        <p>0923-456-1678</p>
       </div>
 
       <div class="flex flex-col md:flex-row justify-center items-center space-y-4 space-x-0 lg:space-y-0 lg:space-x-24">
           <div>
-              <h5 class="text-center text-lg font-semibold">Xian Divinagracia</h5>
-              <p>divinagraciaxian@gmail.com</p>
-              <p>0947-887-1111</p>
+              <h5 class="text-center text-md font-semibold">Xian Divinagracia</h5>
+              <p class="text-xs">divinagraciaxian@gmail.com</p>
+              <p class="text-xs">0947-887-1111</p>
           </div>
           <div>
-              <h5 class="text-center text-lg font-semibold">Joffer Escoto</h5>
-              <p>joffere7@gmail.com</p>
-              <p>0951-519-9488</p>
+              <h5 class="text-center text-md font-semibold">Joffer Escoto</h5>
+              <p class="text-xs">joffere7@gmail.com</p>
+              <p class="text-xs">0951-519-9488</p>
           </div>
       </div>
 
-      <div class="text-center mt-8">
-          <p class="text-sm font-bold">
+      <div class=" text-sm  text-center mt-8">
+          <p class="font-bold">
               &copy; <span id="currentYear">2024</span> XIAN DIVINAGRACIA, JOFFER ESCOTO. All Rights Reserved.
           </p>
       </div>
